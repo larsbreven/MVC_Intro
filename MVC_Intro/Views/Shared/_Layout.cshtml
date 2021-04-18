@@ -4,10 +4,44 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/css/MyStyle.css" rel="stylesheet" />
 </head>
 <body>
+
+    <header>
+        <h1>My company</h1>
+        <nav>
+            <ul>
+                <li>
+                    @Html.ActionLink("About us", "About", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("About me", "AboutMe", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Finished projects", "Projects", "Home")
+                </li>
+                <li>
+                    <a asp-action="ContactUs" asp-controller="Home">Contact Us</a>
+                </li>
+                <li>
+                    <a asp-action="ContactMe" asp-controller="Home">Contact Me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <div>
-        @RenderBody()
+        @RenderBody()                                       @*Main content, render the HTML content, the page  *@
     </div>
+
+    <footer>
+        <p> The date today is: </p>
+        <p>@DateTime.Now.ToString("dd-MMM-yyyy")</p>
+        <br>
+        <br>
+        <p>&copy; Rajtan-Tajtan Technology</p>
+    </footer>
+
 </body>
 </html>
